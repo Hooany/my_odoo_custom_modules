@@ -1,0 +1,28 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="custom_res_partner_form_inherit_2">
+            <field name="name">custom_res.partner.form.inherit2</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='internal_notes']" position="inside">
+                    <group string="Respuestas cuestionario" name="custom_container_3">
+                        <field name="id" string='Numero de ID:' readonly="1"/>
+                        <field name="name" string="Nombre:" readonly="1"/>
+                        <field name="pregunta1" string="Respuesta 1:" readonly="1"/>
+                        <field name="pregunta2" string="Respuesta 2:" readonly="1"/>
+                        <field name="pregunta3" string="Respuesta 3:" readonly="1"/>
+                    </group>
+                </xpath>
+
+                <xpath expr="//page[@name='internal_notes']" position="inside">
+
+                    <group string="Redireccion a Cuestionario" name="custom_container_2" priority="1">
+                        <button name="custom_boton_cuestionario" type="object" string="Generar Cuestionario" class="oe_highlight"/>
+                    </group>
+                </xpath>
+
+            </field>
+        </record>
+    </data>
+</odoo>

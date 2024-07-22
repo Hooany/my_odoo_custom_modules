@@ -1,0 +1,13 @@
+<odoo>
+  <data>
+
+    <!--    Menu para que aparezca en las tabs de mi website (parte de banner superior)-->
+    <record id="menu_custom_page" model="website.menu">
+      <field name="name">Trabaja con nosotros</field>
+      <field name="url">/cuestionario</field>
+      <field name="parent_id" ref="website.main_menu"/>
+      <field name="sequence" eval="100"/>
+    </record>
+
+  </data>
+</odoo>

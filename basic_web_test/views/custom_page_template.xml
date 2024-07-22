@@ -1,0 +1,44 @@
+<odoo>
+    <!--    contenido de la pagina creada -->
+    <template id="custom_page_template" name="Cuestionario">
+        <t t-call="website.layout">
+            <div class="container">
+                <h1> Cuestionario </h1>
+
+                <form role="form" action="/cuestionario/button_action" method="POST">
+                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                    <input type="hidden" name="id" value="value1"/>
+                    <input type="hidden" name="name" value="value2"/>
+                    <p>Partner ID: <t t-esc="partner_id"/> </p>
+
+                    <div class="form-group">
+                        <label for="question1">1. What is your name?</label>
+                        <input type="text" id="pregunta1" name="pregunta1" class="form-control" required="required" t-att-value="pregunta1"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="question2">2. What is your email?</label>
+                        <input type="email" id="pregunta2" name="pregunta2" class="form-control" required="required" t-att-value="pregunta2"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="question3">3. What is your favorite color?</label>
+                        <input type="text" id="pregunta3" name="pregunta3" class="form-control" required="required" t-att-value="pregunta3"/>
+                    </div>
+                    <div class="form-group" style="margin-bottom: 20px;">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-lg s_website_form_send"> Enviar formulario </button>
+                    </div>
+                </form>
+            </div>
+
+            <script type="text/javascript">
+                document.addEventListener('DOMContentLoaded', function() {
+                const urlParams = new URLSearchParams(window.location.search);
+                document.querySelector('input[name="id"]').value = urlParams.get('id') || '0';
+                document.querySelector('input[name="name"]').value = urlParams.get('name') || 'None';
+                });
+            </script>
+        </t>
+    </template>
+
+</odoo>

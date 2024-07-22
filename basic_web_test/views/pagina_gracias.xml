@@ -1,0 +1,32 @@
+<odoo>
+
+    <record id="pagina_gracias" model="website.page">
+        <field name="name">Thanks</field>
+        <field name="type">qweb</field>
+        <field name="url">/gracias_por_responder</field>
+        <field name="website_published">True</field>
+        <field name="key">basic_web_test.pagina_gracias</field>
+        <field name="arch" type="xml">
+            <t name="Thanks" t-name="basic_web_test.pagina_gracias">
+                <t t-call="website.layout">
+                    <div id="wrap">
+                        <div class="container">
+                            <h1>¡Gracias por contactarnos!</h1>
+                            <div class="row">
+                                <div class="col-lg-8">
+                                    <div class="alert alert-success" role="status">
+                                        <p>Se enviaron sus respuestas.</p>
+                                    </div>
+                                    <p>Puede descargar el PDF o cerrar la pestaña.</p>
+                                    <a href="www.dummydownload.com" class="btn btn-primary" target="_blank">Descargar PDF</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+
+        </field>
+    </record>
+
+</odoo>

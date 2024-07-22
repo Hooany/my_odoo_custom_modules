@@ -1,0 +1,31 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="custom_res_partner_form_inherit_1">
+            <field name="name">custom_res.partner.form.inherit1</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//page[@name='internal_notes']" position="inside">
+                    <group string="Info Adicional" name="custom_container_1" priority="1">
+                        <field name="custom_field_2" string="" placeholder="Texto custom agregado"/>
+                    </group>
+                </xpath>
+
+                <xpath expr="//page[@name='sales_purchases']" position="after">
+                    <page string="Pagina Custom" name="pagina_custom_1">
+
+                        <button name="custom_button_method" type="object" string="Click Me" class="oe_highlight"/>
+
+                        <group string="Info Adicional 2" name="custom_container_1" priority="1">
+                            <field name="custom_field_1" string="" placeholder="Texto custom agregado"/>
+                        </group>
+                    </page>
+                </xpath>
+
+            </field>
+
+        </record>
+
+    </data>
+</odoo>

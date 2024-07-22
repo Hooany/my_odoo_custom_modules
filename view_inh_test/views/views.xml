@@ -1,0 +1,16 @@
+<odoo>
+  <data>
+        <record model="ir.ui.view" id="custom_res_partner_form_inherit_2">
+            <field name="name">custom_res.partner.form.inherit2</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="custom_fields_test.custom_res_partner_form_inherit_1"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='pagina_custom_1']" position="inside">
+                    <group string="texto nuevo heredado" name="custom_container_4" priority="1">
+                        <field name="custom_field_3" string="" placeholder="Texto custom agregado"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+  </data>
+</odoo>

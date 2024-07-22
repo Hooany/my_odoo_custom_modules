@@ -1,0 +1,61 @@
+<odoo>
+    <data>
+        <!--diseño de mi webpage custom-->
+        <record id="custom_web_form1" model="website.menu">
+            <field name="name">Responder Preguntas</field>
+            <field name="url">/cuestionario_web</field>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="sequence">55</field>
+        </record>
+
+        <template id="questionnaire_form" name="Responder preguntas">
+            <t t-call="website.layout">
+                <div id="wrap">
+                    <div class="oe_structure">
+                        <div class="container">
+
+                            <h1>Questionnaire</h1>
+                            <form action="/questionnaire/submit" method="post">
+                                <input type="text" id="question3" name="question3" class="form-control" required="required"/>
+                                <div>
+                                    <label for="response">Your Response:</label>
+                                    <input type="text" name="response" id="response" required="required"/>
+                                </div>
+                                <div class="clearfix oe_login_buttons">
+                                    <button type="submit" class="btn btn-primary pull-left">Enviar respuestas</button>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </template>
+
+        <record id="question_thanks" model="website.page">
+            <field name="name">Thanks</field>
+            <field name="type">qweb</field>
+            <field name="url">/question-thank-you</field>
+            <field name="website_published">True</field>
+            <field name="key">custom_questionnaire.thank_you</field>
+            <field name="arch" type="xml">
+
+                <t t-call="website.layout">
+                    <div id="wrap">
+                        <div class="container">
+                            <h1>Thank You!</h1>
+                            <div class="row">
+                                <div class="col-lg-8">
+                                    <div class="alert alert-success" role="status">
+                                        <p>Your response has been submitted.</p>
+                                    </div>
+                                    <p>We will get back to you shortly.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,33 @@
+<odoo>
+    <data>
+
+        <!--        menu de mi modulo, main y luego action-->
+        <menuitem id="menu_questionnaire_root" name="Questionnaires" />
+        <menuitem id="menu_questionnaire" name="Manage Questionnaires" parent="menu_questionnaire_root" action="questionnaire_action" />
+
+        <!--        acción que se mostrará en el menu principal de navegacion para acceder a mi modulo-->
+        <record id="questionnaire_action" model="ir.actions.act_window">
+            <field name="name">Questionnaires</field>
+            <field name="res_model">custom.questionnaire</field>
+            <field name="view_mode">form</field>
+        </record>
+
+        <!--        vista de mi modulo en formato form-->
+        <record id="view_questionnaire_form" model="ir.ui.view">
+            <field name="name">questionnaire.form</field>
+            <field name="model">custom.questionnaire</field>
+            <field name="arch" type="xml">
+                <form string="Questionnaire">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="link" readonly="1"/>
+                            <button string="Generate Link" type="object" name="generate_link" class="btn-primary"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>
