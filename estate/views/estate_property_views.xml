@@ -1,0 +1,13 @@
+<odoo>
+    <data>
+        <!--action definition for estate property module-->
+        <record id="estate_property_action" model="ir.actions.act_window">
+            <field name="name">Estate property action</field>
+            <field name="res_model">estate_property</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+
+    </data>
+</odoo>

@@ -1,0 +1,11 @@
+<odoo>
+    <data>
+        <!--first menu for the estate module -->
+        <menuitem name="Estate Property" id="estate.menu_root">
+            <menuitem id="estate_first_level_menu" name="First level">
+                <menuitem id="estate_model_menu_action" action="estate_property_action"/>
+            </menuitem>
+        </menuitem>
+
+    </data>
+</odoo>

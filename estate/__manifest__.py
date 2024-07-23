@@ -20,10 +20,14 @@
     'depends': ['base'],
 
     # always loaded
+    # it is important to remember that the order of the list matters,
+    # This means that if data A refers to data B, you must make sure that B is loaded before A.
     'data': [
-        # 'security/ir.model.access.csv',
+        'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
+        'views/estate_property_views.xml',
+        'views/estate_menus.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
